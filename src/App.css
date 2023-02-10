@@ -54,7 +54,21 @@
 }
 
 .yellow_button:hover {
-    border-color: rgb(250, 212, 0);
+    border-color: rgb(233, 198, 0);
     border-width: 3px;
 }
 /*  /Yellow Button    */
+
+/*  Orange Button    */
+.orange_button {
+    display: flex;
+    align-items: center;
+    background-color: rgb(233, 100, 44);
+    color: rgb(47, 55, 58);
+}
+
+.orange_button:hover {
+    border-color: rgb(252, 151, 108);
+    border-width: 3px;
+}
+/*  /Orange Button    */
