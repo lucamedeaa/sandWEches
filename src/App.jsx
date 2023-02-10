@@ -1,22 +1,22 @@
 import NavBar from "./components/navbar";
-import YellowButton from "./components/yellow_button";
-import OrangeButton from "./components/orange_button";
+import Orders from "./pages/orders";
+import Products from "./pages/products";
+import Accounts from "./pages/accounts";
+import Offers from "./pages/offers";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
     <>
-      <NavBar />
-      <YellowButton
-        text="Cipollotto"
-        onClick={() => alert("Ciao")}
-        height="100px"
-      />
-      <OrangeButton
-        text="Cipollotto"
-        onClick={() => alert("Ciao")}
-        height="100px"
-      />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Orders />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/accounts" element={<Accounts />} />
+          <Route path="/offers" element={<Offers />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
