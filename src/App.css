@@ -64,7 +64,7 @@
     display: flex;
     align-items: center;
     background-color: rgb(233, 100, 44);
-    color: rgb(47, 55, 58);
+    color: rgb(255, 255, 255);
 }
 
 .orange_button:hover {
