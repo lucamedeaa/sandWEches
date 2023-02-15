@@ -1,40 +1,33 @@
 import React from "react";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
-import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import LunchDiningOutlinedIcon from "@mui/icons-material/LunchDiningOutlined";
-import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
+import NavBarItems from "./data/navbar_items";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <div className="navbar">
       <img src="/../../logo.png" draggable={false} id="logo" role="button" />
       <ul className="item-container">
-        <li>
-          <LocalMallOutlinedIcon
-            sx={{ color: "black" }}
-            style={{ fontSize: "500%" }}
-          />
-        </li>
-        <li>
-          <LunchDiningOutlinedIcon
-            sx={{ color: "black" }}
-            style={{ fontSize: "500%" }}
-          />
-        </li>
-        <li>
-          <GroupsOutlinedIcon
-            sx={{ color: "black" }}
-            style={{ fontSize: "500%" }}
-          />
-        </li>
-        <li>
-          <MonetizationOnOutlinedIcon
-            sx={{ color: "black" }}
-            style={{ fontSize: "500%" }}
-          />
-        </li>
+        {NavBarItems.map((item) => {
+          return (
+            <li
+              key={item.id}
+              id={window.location.pathname == item.path ? "active" : ""}
+              onClick={() => {
+                window.location.pathname = item.path;
+              }}
+            >
+              <Link to={item.path}>
+                {window.location.pathname == item.path
+                  ? item.activeIcon
+                  : item.icon}
+              </Link>
+            </li>
+          );
+        })}
       </ul>
-      <img src="/../../settings.png" draggable={false} id="settings" />
+      <Link to={"/settings"}>
+        <img src="/../../settings.png" draggable={false} id="settings" />
+      </Link>
     </div>
   );
 };

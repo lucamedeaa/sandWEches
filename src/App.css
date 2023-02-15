@@ -19,7 +19,13 @@
     height: 100%;
 }
 .navbar .item-container li {
-    margin: 5%;
+    margin: 0;
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
 }
 
 .navbar #logo {
@@ -38,6 +44,14 @@
     transform: translate(-50%);
 }
 
+.navbar #active {
+    background: rgb(250,216,23);
+    background: linear-gradient(60deg, rgba(250,216,23,1) 0%, rgba(245,132,6,0.9) 50%, rgba(233,100,44,1) 100%);
+    padding: 10px 0 10px 0;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 @media only screen and (max-width: 1280px) {
     .navbar {
         width: 200px;
@@ -45,30 +59,20 @@
 }
 /*  /Navbar    */
 
-/*  Yellow Button    */
-.yellow_button {
-    display: flex;
-    align-items: center;
-    background-color: rgb(253, 236, 139);
-    color: rgb(47, 55, 58);
+/*  Table   */
+.nextui-c-cAbbLF
+{
+    background: #E9642C;
 }
 
-.yellow_button:hover {
-    border-color: rgb(233, 198, 0);
-    border-width: 3px;
-}
-/*  /Yellow Button    */
-
-/*  Orange Button    */
-.orange_button {
-    display: flex;
-    align-items: center;
-    background-color: rgb(233, 100, 44);
-    color: rgb(255, 255, 255);
+.nextui-c-hWZRae-kUADSW-bordered-true
+{
+    border-color: #e9652c4a;
 }
 
-.orange_button:hover {
-    border-color: rgb(252, 151, 108);
-    border-width: 3px;
+.nextui-c-kNgzEX
+{
+    background: #e9652ca2;
+    color: white;
 }
-/*  /Orange Button    */
+/*  /Table  */
