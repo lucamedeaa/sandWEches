@@ -76,3 +76,28 @@
     color: white;
 }
 /*  /Table  */
+
+/*  TextField   */
+.nextui-c-eXOOPO{
+    background: white;
+    border-color: orange;
+}
+
+.nextui-c-jeuecp{
+    background: white;
+    border-color: orange;
+}
+
+.nextui-c-iwmZdB{
+    --nextui--inputBorderColor: orange;
+    --nextui--inputHoverBorderColor: orange;
+}
+
+.nextui-c-iwmZdB-gOvjVW-size-md {
+    --nextui--inputBorderRadius: var(--nextui-space-1);
+}
+
+.nextui-c-iwmZdB-dpkacN-borderWeight-normal {
+    --nextui--inputBorderWeight: var(--nextui-borderWeights-light);
+}
+/*  /TextField  */
