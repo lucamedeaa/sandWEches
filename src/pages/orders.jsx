@@ -1,6 +1,8 @@
 import React from "react";
+import YellowButton from "../components/yellow_button";
 import Table from "../components/table";
-import { Grid, Button, Input, Text } from "@nextui-org/react";
+import TextField from "../components/textfield";
+import { Grid, Text } from "@nextui-org/react";
 
 const Orders = () => {
   const row = [
@@ -88,15 +90,12 @@ const Orders = () => {
         justifyContent: "center",
       }}
     >
-      <Grid.Container style={{ paddingLeft: "5vw" }}>
+      <Grid.Container style={{ paddingLeft: "5.5vw" }}>
         <Grid xs={12} style={{ height: "5vh" }}>
-          <Text size={35}>12:12 AM</Text>
+          <p style={{ paddingTop: "5vh", fontSize: "20px", color: "rgb(47, 55, 58)", fontWeight: "lighter"}}><span style={{fontSize: "25px"}}>12:12 AM</span><br />Monday, December 12, 2012</p>
         </Grid>
-        <Grid xs={12} style={{ height: "5vh" }}>
-          <Text size={25}>Monday, December 12, 2012</Text>
-        </Grid>
-        <Grid xs={12} style={{ height: "5vh" }}>
-          <Text size={35}>Orders</Text>
+        <Grid xs={12} style={{ height: "5vh", paddingTop: "4.5vh" }}>
+          <Text size={35} style={{ color: "rgb(47, 55, 58)" }}>Orders</Text>
         </Grid>
       </Grid.Container>
       <Grid.Container
@@ -110,10 +109,10 @@ const Orders = () => {
         justify="center"
       >
         <Grid style={{ paddingRight: "500px" }}>
-          <Input />
+          <TextField width="470px" placeholder="Search..."/>
         </Grid>
         <Grid>
-          <Button>Set to done</Button>
+          <YellowButton text="Set to done"/>
         </Grid>
         <Grid>
           <Table rows={row} columns={column} width="70vw" rowsPerPage="8" />
