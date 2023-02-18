@@ -1,13 +1,24 @@
 import React, { useState, useEffect } from "react";
 import YellowButton from "../components/yellow_button";
 import Table from "../components/table";
-import TextField from "../components/textfield";
 import { Grid, Text } from "@nextui-org/react";
 import { useQuery } from "react-query";
 import { getOrders } from "../data/api";
+import SearchBar from "../components/searchbar";
+import ReactLoading from "react-loading";
+
+const filterOrders = (orders, searchQuery) => {
+  if (!searchQuery) return orders;
+
+  return orders.filter((item) => {
+    const name = item.user.toLowerCase();
+    return name.includes(searchQuery);
+  });
+};
 
 const Orders = () => {
   const [dateState, setDateState] = useState(new Date());
+  const [searchQuery, setSearchQuery] = useState("");
 
   const ordersQuery = useQuery({
     queryKey: ["orders"],
@@ -20,8 +31,24 @@ const Orders = () => {
     setInterval(() => setDateState(new Date()), 30000);
   }, []);
 
-  if (ordersQuery.status === "loading") return <h1>Loading...</h1>;
+  if (ordersQuery.status === "loading")
+    return (
+      <ReactLoading
+        type="spinningBubbles"
+        color="#E9642C"
+        width={100}
+        height={50}
+        style={{
+          display: "flex",
+          alignItem: "center",
+          justifyContent: "center",
+        }}
+      />
+    );
+
   if (ordersQuery.status === "error") return JSON.stringify(ordersQuery.error);
+
+  const filteredOrders = filterOrders(ordersQuery.data, searchQuery);
 
   const column = [
     {
@@ -41,8 +68,6 @@ const Orders = () => {
       label: "Status",
     },
   ];
-
-  console.log(ordersQuery);
 
   return (
     <Grid.Container
@@ -64,7 +89,7 @@ const Orders = () => {
               fontWeight: "lighter",
             }}
           >
-            <span style={{ fontSize: "30px" }}>
+            <span style={{ fontSize: "30px", fontWeight: "normal" }}>
               {dateState.toLocaleString("en-US", {
                 hour: "numeric",
                 minute: "numeric",
@@ -96,14 +121,18 @@ const Orders = () => {
         justify="center"
       >
         <Grid style={{ paddingRight: "500px" }}>
-          <TextField width="470px" placeholder="Search..." />
+          <SearchBar
+            width="476px"
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
         </Grid>
         <Grid>
           <YellowButton text="Set to done" />
         </Grid>
         <Grid>
           <Table
-            rows={ordersQuery.data}
+            rows={filteredOrders}
             columns={column}
             width="70vw"
             rowsPerPage="8"

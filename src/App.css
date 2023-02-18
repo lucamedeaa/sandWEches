@@ -101,3 +101,15 @@
     --nextui--inputBorderWeight: var(--nextui-borderWeights-light);
 }
 /*  /TextField  */
+
+/*  SearchBar   */
+#searchbar {
+    all: unset;
+    border: solid #95A4AA;
+    border-width: 2px;
+    border-radius: 20px;
+    width: 476px;
+    height: 35px;
+    padding-left: 15px;
+}
+/*  /SearchBar   */
