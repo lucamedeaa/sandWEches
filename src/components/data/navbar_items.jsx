@@ -9,13 +9,13 @@ const NavBarItems = [
     icon: (
       <LocalMallOutlinedIcon
         style={{ fontSize: "500%" }}
-        sx={{ color: "black" }}
+        sx={{ color: "rgb(47, 55, 58)", strokeWidth: 0.1 }}
       />
     ),
     activeIcon: (
       <LocalMallOutlinedIcon
-        sx={{ color: "white" }}
-        style={{ fontSize: "600%" }}
+        sx={{ color: "white", strokeWidth: 0.1 }}
+        style={{ fontSize: "500%" }}
       />
     ),
     path: "/",
@@ -25,13 +25,13 @@ const NavBarItems = [
     icon: (
       <LunchDiningOutlinedIcon
         style={{ fontSize: "500%" }}
-        sx={{ color: "black" }}
+        sx={{ color: "rgb(47, 55, 58)", strokeWidth: 0.1 }}
       />
     ),
     activeIcon: (
       <LunchDiningOutlinedIcon
-        sx={{ color: "white" }}
-        style={{ fontSize: "600%" }}
+        sx={{ color: "white", strokeWidth: 0.1 }}
+        style={{ fontSize: "500%" }}
       />
     ),
     path: "/products",
@@ -41,13 +41,13 @@ const NavBarItems = [
     icon: (
       <GroupsOutlinedIcon
         style={{ fontSize: "500%" }}
-        sx={{ color: "black" }}
+        sx={{ color: "rgb(47, 55, 58)", strokeWidth: 0.1 }}
       />
     ),
     activeIcon: (
       <GroupsOutlinedIcon
-        sx={{ color: "white" }}
-        style={{ fontSize: "600%" }}
+        sx={{ color: "white", strokeWidth: 0.1 }}
+        style={{ fontSize: "500%" }}
       />
     ),
     path: "/accounts",
@@ -57,13 +57,13 @@ const NavBarItems = [
     icon: (
       <MonetizationOnOutlinedIcon
         style={{ fontSize: "500%" }}
-        sx={{ color: "black" }}
+        sx={{ color: "rgb(47, 55, 58)", strokeWidth: 0.1 }}
       />
     ),
     activeIcon: (
       <MonetizationOnOutlinedIcon
-        sx={{ color: "white" }}
-        style={{ fontSize: "600%" }}
+        sx={{ color: "white", strokeWidth: 0.1 }}
+        style={{ fontSize: "500%" }}
       />
     ),
     path: "/offers",

@@ -1,7 +1,11 @@
+body
+{
+    background: #FFECD9
+}
 /*  Navbar    */
 .navbar {
     background-color: white;
-    width: 15vw;
+    width: 13vw;
     height: 100vh;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
@@ -20,7 +24,7 @@
 }
 .navbar .item-container li {
     margin: 0;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -33,7 +37,7 @@
     margin-top: 40px;
     left: 50%;
     transform: translate(-50%);
-    width: 60%;
+    width: 55%;
 }
 
 .navbar #settings {
@@ -47,16 +51,16 @@
 .navbar #active {
     background: rgb(250,216,23);
     background: linear-gradient(60deg, rgba(250,216,23,1) 0%, rgba(245,132,6,0.9) 50%, rgba(233,100,44,1) 100%);
-    padding: 10px 0 10px 0;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
+    padding: 21px 0 21px 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
-@media only screen and (max-width: 1280px) {
+/*@media only screen and (max-width: 1280px) {
     .navbar {
         width: 200px;
     }
-}
+}*/
 /*  /Navbar    */
 
 /*  Table   */
@@ -67,7 +71,8 @@
 
 .nextui-c-hWZRae-kUADSW-bordered-true
 {
-    border-color: #e9652c4a;
+    border-color: #f19d79;
+    border-width: 1px;
 }
 
 .nextui-c-kNgzEX
@@ -94,11 +99,11 @@
 }
 
 .nextui-c-iwmZdB-gOvjVW-size-md {
-    --nextui--inputBorderRadius: var(--nextui-space-1);
+    --nextui--inputBorderRadius: 5px;
 }
 
 .nextui-c-iwmZdB-dpkacN-borderWeight-normal {
-    --nextui--inputBorderWeight: var(--nextui-borderWeights-light);
+    --nextui--inputBorderWeight: 1px;
 }
 /*  /TextField  */
 
@@ -107,9 +112,10 @@
     all: unset;
     border: solid #95A4AA;
     border-width: 2px;
-    border-radius: 20px;
+    border-radius: 28px;
     width: 476px;
-    height: 35px;
-    padding-left: 15px;
+    height: 55px;
+    padding-left: 40px;
+    padding-right: 30px;
 }
 /*  /SearchBar   */

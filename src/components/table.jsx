@@ -10,6 +10,7 @@ const Tab = ({ rows, columns, width, rowsPerPage }) => {
           bordered
           selectionMode="single"
           style={{ background: "white" }}
+          shadow={false}
         >
           <Table.Header columns={columns}>
             {(column) => (

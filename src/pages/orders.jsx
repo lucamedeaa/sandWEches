@@ -70,7 +70,62 @@ const Orders = () => {
   ];
 
   return (
-    <Grid.Container
+    <div
+      style={{
+        height: "100vh",
+        width: "87vw",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Grid.Container style={{ height: "70vh", width: "80vw" }} gap={8}>
+        <Grid style={{ background: "white" }} xs={9}></Grid>
+        <Grid style={{ background: "white" }} xs={3}></Grid>
+        <Grid>
+          <Grid.Container
+            style={{
+              background: "white",
+              height: "70vh",
+              width: "80vw",
+              borderRadius: "20px",
+            }}
+            justify="center"
+            gap={4}
+          >
+            <Grid xs={8}>
+              <SearchBar
+                width="476px"
+                searchQuery={searchQuery}
+                setSearchQuery={setSearchQuery}
+              />
+            </Grid>
+            <Grid xs={3}>
+              <YellowButton
+                text="Set to done"
+                height="55px"
+                width="160px"
+                textSize="18px"
+              />
+            </Grid>
+            <Grid>
+              <Table
+                rows={filteredOrders}
+                columns={column}
+                width="70vw"
+                rowsPerPage="8"
+              />
+            </Grid>
+          </Grid.Container>
+        </Grid>
+      </Grid.Container>
+    </div>
+  );
+};
+
+export default Orders;
+
+/*
+<Grid.Container
       style={{
         background: "#FFECD9",
         height: "100vh",
@@ -135,12 +190,9 @@ const Orders = () => {
             rows={filteredOrders}
             columns={column}
             width="70vw"
-            rowsPerPage="8"
+            rowsPerPage="5"
           />
         </Grid>
       </Grid.Container>
     </Grid.Container>
-  );
-};
-
-export default Orders;
+*/
