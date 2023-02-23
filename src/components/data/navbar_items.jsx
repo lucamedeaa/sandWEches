@@ -19,6 +19,7 @@ const NavBarItems = [
       />
     ),
     path: "/",
+    background: true,
   },
   {
     id: 2,
@@ -35,6 +36,7 @@ const NavBarItems = [
       />
     ),
     path: "/products",
+    background: true,
   },
   {
     id: 3,
@@ -51,6 +53,7 @@ const NavBarItems = [
       />
     ),
     path: "/accounts",
+    background: true,
   },
   {
     id: 4,
@@ -67,6 +70,21 @@ const NavBarItems = [
       />
     ),
     path: "/offers",
+    background: true,
+  },
+  {
+    id: 5,
+    icon: <img src="/../../settings.png" draggable={false} id="settings" />,
+    activeIcon: (
+      <img
+        src="/../../settings.png"
+        draggable={false}
+        id="settings"
+        style={{ background: "rgb(47, 55, 58)", borderRadius: "50%" }}
+      />
+    ),
+    path: "/settings",
+    background: false,
   },
 ];
 

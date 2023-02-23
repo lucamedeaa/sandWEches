@@ -24,12 +24,19 @@ body
 }
 .navbar .item-container li {
     margin: 0;
-    margin-bottom: 30px;
     width: 100%;
+    padding: 15px 0 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
+}
+
+.navbar .item-container li:hover {
+    transition: 100ms linear;
+    background-color: #e9e9e9;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .navbar #logo {
@@ -42,6 +49,7 @@ body
 
 .navbar #settings {
     position: absolute;
+    padding: 2%;
     width: 18%;
     left: 50%;
     bottom: 8%;
@@ -81,31 +89,6 @@ body
     color: white;
 }
 /*  /Table  */
-
-/*  TextField   */
-.nextui-c-eXOOPO{
-    background: white;
-    border-color: orange;
-}
-
-.nextui-c-jeuecp{
-    background: white;
-    border-color: orange;
-}
-
-.nextui-c-iwmZdB{
-    --nextui--inputBorderColor: orange;
-    --nextui--inputHoverBorderColor: orange;
-}
-
-.nextui-c-iwmZdB-gOvjVW-size-md {
-    --nextui--inputBorderRadius: 5px;
-}
-
-.nextui-c-iwmZdB-dpkacN-borderWeight-normal {
-    --nextui--inputBorderWeight: 1px;
-}
-/*  /TextField  */
 
 /*  SearchBar   */
 #searchbar {

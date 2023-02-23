@@ -1,0 +1,10 @@
+.nextui-c-iWjDFM-cwXrJp-borderWeight-normal {
+    --nextui--buttonBorderWeight: var(--nextui-borderWeights-light);
+}
+.nextui-c-iWjDFM-hkKLfu-color-default {
+    background: var(--nextui-colors-white);
+    color: var(--nextui-colors-black);
+}
+.nextui-c-iWjDFM-hKBzkL-cv {
+    border-color: var(--nextui-colors-black);
+}

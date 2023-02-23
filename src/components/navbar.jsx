@@ -11,7 +11,11 @@ const NavBar = () => {
           return (
             <li
               key={item.id}
-              id={window.location.pathname == item.path ? "active" : ""}
+              id={
+                window.location.pathname == item.path && item.background
+                  ? "active"
+                  : ""
+              }
               onClick={() => {
                 window.location.pathname = item.path;
               }}
@@ -25,9 +29,6 @@ const NavBar = () => {
           );
         })}
       </ul>
-      <Link to={"/settings"}>
-        <img src="/../../settings.png" draggable={false} id="settings" />
-      </Link>
     </div>
   );
 };

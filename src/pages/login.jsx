@@ -1,10 +1,20 @@
 import { Grid, Text } from "@nextui-org/react";
-import React from "react";
+import React, { useState } from "react";
 import logo from "/logo.png";
 import TextField from "./../components/textfield";
 import OrangeButton from "./../components/orange_button";
+import { Login } from "../data/api";
 
 const LoginPage = ({ setToken }) => {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+
+  const handleSubmit = async () => {
+    const token = await Login(email, password);
+    setToken(token);
+    window.location.reload();
+  };
+
   return (
     <Grid.Container
       style={{
@@ -43,7 +53,10 @@ const LoginPage = ({ setToken }) => {
         </Text>
       </Grid>
       <Grid justify="center" xs={12}>
-        <TextField width="250px" />
+        <TextField
+          width="250px"
+          handleChange={(e) => setEmail(e.target.value)}
+        />
       </Grid>
       <Grid justify="center" xs={12}>
         <Text
@@ -59,7 +72,10 @@ const LoginPage = ({ setToken }) => {
         </Text>
       </Grid>
       <Grid justify="center" xs={12}>
-        <TextField width="250px" />
+        <TextField
+          width="250px"
+          handleChange={(e) => setPassword(e.target.value)}
+        />
       </Grid>
       <Grid justify="center" xs={12}>
         <a
@@ -92,7 +108,9 @@ const LoginPage = ({ setToken }) => {
           width="200px"
           text="Login"
           textSize={20}
-          onPress={() => setToken("1")}
+          onPress={() => {
+            handleSubmit();
+          }}
         />
       </Grid>
     </Grid.Container>
