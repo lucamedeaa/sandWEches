@@ -7,6 +7,7 @@ import SearchBar from "../components/searchbar";
 import ReactLoading from "react-loading";
 import { getProducts } from "../data/api";
 import ModifyProduct from "../components/modal/modifyProduct";
+import AddProduct from "../components/modal/addNewProduct";
 
 const filterProducts = (products, searchQuery) => {
   if (!searchQuery) return products;
@@ -21,6 +22,7 @@ const Products = () => {
   const [dateState, setDateState] = useState(new Date());
   const [searchQuery, setSearchQuery] = useState("");
   const [showModify, setShowModify] = useState(false);
+  const [showAddProduct, setShowAddProduct] = useState(false);
 
   const productQuery = useQuery({
     queryKey: ["product"],
@@ -156,8 +158,7 @@ const Products = () => {
                 onPress={() => setShowModify(true)}
               />
               <ModifyProduct
-                width="100vw"
-                height="100vh"
+                width="1000px"
                 show={showModify}
                 close={() => setShowModify(false)}
               />
@@ -168,7 +169,13 @@ const Products = () => {
                 height="55px"
                 width="160px"
                 textSize="18px"
+                onPress={() => setShowAddProduct(true)}
               />
+              <AddProduct 
+                width="1000px"
+                show={showAddProduct}
+                close={() => setShowAddProduct(false)}
+                />
             </Grid>
             <Grid xs={2}>
               <YellowButton

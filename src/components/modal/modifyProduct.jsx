@@ -119,8 +119,7 @@ export default function ModifyProduct({
         style={{
           justifyContent: "center",
           display: "flex",
-          paddingLeft: "4vw",
-          paddingBottom: "3vw",
+          paddingBottom: "2vw",
         }}
       >
         <div

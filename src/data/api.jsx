@@ -38,7 +38,7 @@ export function getOffers() {
 export function Login(email, password) {
   return axios
     .post(
-      "http://localhost/evomatic/API/user/login.php",
+      "http://paninaraviolaitis.altervista.org/evomatic/API/user/login.php",
       {
         email: email,
         password: password,

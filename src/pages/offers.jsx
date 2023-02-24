@@ -6,6 +6,8 @@ import { useQuery } from "react-query";
 import { getOffers } from "../data/api";
 import SearchBar from "../components/searchbar";
 import ReactLoading from "react-loading";
+import ModifyOffer from "../components/modal/modifyOffer";
+import AddOffer from "../components/modal/createOffer";
 
 const filterOffers = (offers, searchQuery) => {
   if (!searchQuery) return offers;
@@ -19,6 +21,9 @@ const filterOffers = (offers, searchQuery) => {
 const Offers = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [dateState, setDateState] = useState(new Date());
+  const [showModify, setShowModify] = useState(false);
+  const [showAdd, setShowAdd] = useState(false);
+
   const offersQuery = useQuery({
     queryKey: ["offers"],
     queryFn: getOffers,
@@ -144,13 +149,25 @@ const Offers = () => {
                 setSearchQuery={setSearchQuery}
               />
             </Grid>
-            <Grid xs={3}>
+            <Grid xs={2}>
               <YellowButton
-                text="Set to done"
+                text="Modify"
                 height="55px"
                 width="160px"
                 textSize="18px"
+                onPress={() => setShowModify(true)}
               />
+              <ModifyOffer width="1000px" show={showModify} close={() => setShowModify(false)}/>
+            </Grid>
+            <Grid xs={2}>
+            <YellowButton
+                text="Add Offer"
+                height="55px"
+                width="160px"
+                textSize="18px"
+                onPress={() => setShowAdd(true)}
+              />
+              <AddOffer width="1000px" show={showAdd} close={() => setShowAdd(false)}/>
             </Grid>
             <Grid>
               <Table
