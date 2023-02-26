@@ -3,7 +3,7 @@ body
     background: #FFECD9
 }
 /*  Navbar    */
-.navbar {
+/*.navbar {
     background-color: white;
     width: 13vw;
     height: 100vh;
@@ -63,7 +63,7 @@ body
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
 }
-
+*/
 /*@media only screen and (max-width: 1280px) {
     .navbar {
         width: 200px;

@@ -20,7 +20,7 @@ export function getProducts() {
 export function getAccounts() {
   return axios
     .get(
-      "http://paninaraviolaitis.altervista.org/evomatic/API/user/getArchiveUsers.php",
+      "http://paninaraviolaitis.altervista.org/evomatic/API/user/getArchiveUser.php",
       { params: { _sort: "status" } }
     )
     .then((res) => res.data);
@@ -42,6 +42,38 @@ export function Login(email, password) {
       {
         email: email,
         password: password,
+      },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    )
+    .then((res) => res.data);
+}
+
+export function addProduct(
+  name,
+  price,
+  description,
+  quantity,
+  category,
+  ingredients,
+  tags,
+  nutritional_values
+) {
+  return axios
+    .post(
+      "http://paninaraviolaitis.altervista.org/evomatic/API/product/createProduct.php",
+      {
+        name,
+        price,
+        description,
+        quantity,
+        category,
+        ingredients,
+        tags,
+        nutritional_values,
       },
       {
         headers: {

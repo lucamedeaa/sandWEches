@@ -51,16 +51,24 @@ const Accounts = () => {
 
   const column = [
     {
-      key: "namesurname",
-      label: "Name Surname",
+      key: "name",
+      label: "Name",
+    },
+    {
+      key: "surname",
+      label: "Surname",
     },
     {
       key: "email",
       label: "Email",
     },
     {
-      key: "status",
-      label: "Status",
+      key: "type",
+      label: "Type",
+    },
+    {
+      key: "active",
+      label: "Active",
     },
   ];
 
@@ -69,7 +77,7 @@ const Accounts = () => {
     <div
       style={{
         height: "100vh",
-        width: "87vw",
+        width: "85vw",
         display: "flex",
         justifyContent: "center",
       }}
@@ -94,7 +102,7 @@ const Accounts = () => {
           }}
           xs={6}
         >
-          <h1 style={{ color: "black" }}>Orders</h1>
+          <h1 style={{ color: "black" }}>Customers</h1>
         </Grid>
         <Grid
           style={{ background: "white", padding: "2vh", borderRadius: "20px" }}

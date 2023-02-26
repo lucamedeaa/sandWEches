@@ -1,35 +1,64 @@
 import React from "react";
+import "./navbar.css";
 import NavBarItems from "./data/navbar_items";
+import { Grid, Button } from "@nextui-org/react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
+  var click = 0;
   return (
-    <div className="navbar">
-      <img src="/../../logo.png" draggable={false} id="logo" role="button" />
-      <ul className="item-container">
-        {NavBarItems.map((item) => {
-          return (
-            <li
-              key={item.id}
-              id={
-                window.location.pathname == item.path && item.background
-                  ? "active"
-                  : ""
-              }
-              onClick={() => {
-                window.location.pathname = item.path;
-              }}
-            >
-              <Link to={item.path}>
-                {window.location.pathname == item.path
-                  ? item.activeIcon
-                  : item.icon}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
+    <Grid.Container
+      style={{
+        width: "11vw",
+        height: "90vh",
+        background: "#e85d22",
+        margin: "2vw",
+        borderRadius: "25px",
+      }}
+    >
+      <Grid
+        xs={12}
+        justify="center"
+        style={{ marginTop: "10vh", marginBottom: "7vh" }}
+      >
+        <img
+          src="/../../logo.png"
+          draggable={false}
+          height="130vh"
+          onClick={() => {
+            click < 9
+              ? click++
+              : window.location.replace(
+                  "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                );
+          }}
+        />
+      </Grid>
+      {NavBarItems.map((item, index) => {
+        return (
+          <Grid
+            key={index}
+            xs={12}
+            justify="center"
+            style={item.text === "Settings" ? { marginBottom: "25vh" } : {}}
+          >
+            <Link to={item.path}>
+              <Button
+                className="Button"
+                icon={item.icon}
+                style={{
+                  height: "5vh",
+                  background: "#e85d22",
+                }}
+                id={window.location.pathname == item.path ? "active" : ""}
+              >
+                {item.text}
+              </Button>
+            </Link>
+          </Grid>
+        );
+      })}
+    </Grid.Container>
   );
 };
 

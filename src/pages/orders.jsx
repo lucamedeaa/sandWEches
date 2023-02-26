@@ -73,7 +73,7 @@ const Orders = () => {
     <div
       style={{
         height: "100vh",
-        width: "87vw",
+        width: "85vw",
         display: "flex",
         justifyContent: "center",
       }}

@@ -6,6 +6,7 @@ const Tab = ({ rows, columns, width, rowsPerPage }) => {
     <NextUIProvider>
       <Container css={{ width: width }}>
         <Table
+          aria-label="Table"
           lined
           bordered
           selectionMode="single"

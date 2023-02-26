@@ -28,9 +28,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Orders />} />
               <Route path="/products" element={<Products />} />
-              <Route path="/accounts" element={<Accounts />} />
+              <Route path="/customers" element={<Accounts />} />
               <Route path="/offers" element={<Offers />} />
-              <Route path="/settings" element={<Settings />}/>
+              <Route path="/settings" element={<Settings />} />
             </Routes>
           </Grid>
         </Grid.Container>

@@ -108,10 +108,7 @@ const LoginPage = ({ setToken }) => {
           width="200px"
           text="Login"
           textSize={20}
-          onPress={() => {
-            setToken("ciao");
-            window.location.reload();
-          }}
+          onPress={handleSubmit}
         />
       </Grid>
     </Grid.Container>

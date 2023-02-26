@@ -1,0 +1,10 @@
+#active {
+    background: linear-gradient(45deg, rgba(250,158,23,1) 0%, rgba(245,132,6,1) 50%, rgba(233,115,44,1) 100%) !important;
+}
+
+@media screen and (max-width: 1750px) {
+    .Button {
+        min-width: 150px;
+    }
+}
+
