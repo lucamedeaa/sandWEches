@@ -17,6 +17,11 @@ const Settings = () => {
   const [showTerms, setShowTerms] = useState(false);
   const [showPrivacy, setShowPrivacy] = useState(false);
 
+  const nameSurname = `${localStorage.getItem("name")} ${localStorage.getItem(
+    "surname"
+  )}`;
+  const email = localStorage.getItem("email");
+
   return (
     <Grid.Container style={{ height: "100vh", width: "88vw" }}>
       <Grid xs={6}>
@@ -42,7 +47,7 @@ const Settings = () => {
                 height: "0px",
               }}
             >
-              Giulio Chiozzi
+              {nameSurname}
             </h1>
           </Grid>
           <Grid
@@ -52,11 +57,7 @@ const Settings = () => {
               marginBottom: "5vh",
             }}
           >
-            <DisableTextField
-              placeholder="chiozzi.giulio@iisviolamarchesini.edu.it"
-              height="4vh"
-              width="20vw"
-            />
+            <DisableTextField placeholder={email} height="4vh" width="20vw" />
           </Grid>
           <Grid xs={12} justify="center">
             <IconButton

@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Text } from "@nextui-org/react";
 import TextField from "../textfield";
 import OrangeButton from "../orange_button";
+import { changePassword } from "../../data/api";
 
 const App = ({ width, height, show, close }) => {
+  const [email, setEmail] = useState();
+  const [pass, setPass] = useState();
+  const [newPass, setNewPass] = useState();
+
   return (
     <div>
       <Modal
@@ -13,7 +18,7 @@ const App = ({ width, height, show, close }) => {
         width={width}
         style={{
           height: height,
-          left: "-16vw"
+          left: "-16vw",
         }}
       >
         <Modal.Header
@@ -49,7 +54,7 @@ const App = ({ width, height, show, close }) => {
           >
             Email
           </Text>
-          <TextField />
+          <TextField handleChange={(e) => setEmail(e.target.value)} />
           <Text
             size={20}
             style={{
@@ -61,7 +66,7 @@ const App = ({ width, height, show, close }) => {
           >
             Password
           </Text>
-          <TextField />
+          <TextField handleChange={(e) => setPass(e.target.value)} />
           <Text
             size={20}
             style={{
@@ -71,9 +76,9 @@ const App = ({ width, height, show, close }) => {
               paddingLeft: "0.5vw",
             }}
           >
-            Confirm Password
+            New Password
           </Text>
-          <TextField />
+          <TextField handleChange={(e) => setNewPass(e.target.value)} />
         </Modal.Body>
         <Modal.Footer
           style={{
@@ -86,6 +91,7 @@ const App = ({ width, height, show, close }) => {
             width="200px"
             height="64px"
             textSize={18}
+            onPress={() => changePassword(email, pass, newPass)}
           />
         </Modal.Footer>
       </Modal>

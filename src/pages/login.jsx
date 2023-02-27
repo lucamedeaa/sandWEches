@@ -10,8 +10,13 @@ const LoginPage = ({ setToken }) => {
   const [password, setPassword] = useState();
 
   const handleSubmit = async () => {
-    const token = await Login(email, password);
-    setToken(token);
+    const user = await Login(email, password);
+    console.log(user);
+    setToken(user.token);
+    localStorage.setItem("id", user.id);
+    localStorage.setItem("name", user.name);
+    localStorage.setItem("surname", user.surname);
+    localStorage.setItem("email", user.email);
     window.location.reload();
   };
 

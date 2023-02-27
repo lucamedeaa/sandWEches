@@ -8,6 +8,7 @@ export default function CategoryDropdown({
   setSelected,
   selected,
   selectionMode,
+  defaultValue
 }) {
   const selectedValue = useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
@@ -40,6 +41,7 @@ export default function CategoryDropdown({
         selectionMode={selectionMode}
         selectedKeys={selected}
         onSelectionChange={setSelected}
+        defaultValue={defaultValue}
       >
         {elements.map((item) => {
           return <Dropdown.Item key={item.key}>{item.name}</Dropdown.Item>;
