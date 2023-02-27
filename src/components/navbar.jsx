@@ -9,11 +9,9 @@ const NavBar = () => {
   return (
     <Grid.Container
       style={{
-        width: "11vw",
-        height: "90vh",
+        width: "12vw",
+        height: "100vh",
         background: "#e85d22",
-        margin: "2vw",
-        borderRadius: "25px",
       }}
     >
       <Grid

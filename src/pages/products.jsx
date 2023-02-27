@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import YellowButton from "../components/yellow_button";
 import Table from "../components/table";
 import { Grid } from "@nextui-org/react";
@@ -11,7 +11,7 @@ import AddProduct from "../components/modal/addNewProduct";
 
 const filterProducts = (products, searchQuery) => {
   if (!searchQuery) return products;
-
+  console.log(searchQuery);
   return products.filter((item) => {
     const name = item.name.toLowerCase();
     return name.includes(searchQuery);
@@ -19,7 +19,6 @@ const filterProducts = (products, searchQuery) => {
 };
 
 const Products = () => {
-  const [dateState, setDateState] = useState(new Date());
   const [searchQuery, setSearchQuery] = useState("");
   const [showModify, setShowModify] = useState(false);
   const [showAddProduct, setShowAddProduct] = useState(false);
@@ -30,10 +29,6 @@ const Products = () => {
     staleTime: 3000,
     refetchInterval: 1000,
   });
-
-  useEffect(() => {
-    setInterval(() => setDateState(new Date()), 30000);
-  }, []);
 
   if (productQuery.status === "loading")
     return (
@@ -74,7 +69,126 @@ const Products = () => {
 
   const filteredProducts = filterProducts(productQuery.data, searchQuery);
   return (
-    <div
+    <Grid.Container
+      style={{
+        marginTop: "4.5vh",
+        height: "95vh",
+        width: "87vw",
+        display: "flex",
+      }}
+      justify="center"
+    >
+      <Grid.Container
+        style={{
+          background: "white",
+          padding: "2vh",
+          height: "15vh",
+          borderRadius: "20px",
+          boxShadow: "1px 1px 2px 2px white",
+          marginLeft: "2vw",
+          marginRight: "2vw",
+          alignItems: "center",
+          marginTop: "10vh",
+        }}
+        gap={3}
+      >
+        <Grid xs={5}>
+          <h1
+            style={{
+              marginLeft: "3.5vw",
+            }}
+          >
+            Products
+          </h1>
+        </Grid>
+        <Grid
+          xs={3}
+          style={{
+            paddingLeft: "4.5vw",
+          }}
+        >
+          <SearchBar
+            width="275px"
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
+        </Grid>
+        <Grid xs={1}>
+          <YellowButton
+            text="Modify"
+            height="55px"
+            width="160px"
+            textSize="18px"
+            onPress={() => setShowModify(true)}
+          />
+          <ModifyProduct
+            width="1000px"
+            show={showModify}
+            close={() => setShowModify(false)}
+          />
+        </Grid>
+        <Grid xs={1}>
+          <YellowButton
+            text="Add"
+            height="55px"
+            width="160px"
+            textSize="18px"
+            onPress={() => setShowAddProduct(true)}
+          />
+          <AddProduct
+            width="1000px"
+            show={showAddProduct}
+            close={() => setShowAddProduct(false)}
+          />
+        </Grid>
+        <Grid
+          xs={2}
+          style={{
+            paddingRight: "4.5vw",
+          }}
+        >
+          <YellowButton
+            text="Change Status"
+            height="55px"
+            width="160px"
+            textSize="18px"
+          />
+        </Grid>
+      </Grid.Container>
+      <Grid>
+        <Grid.Container
+          style={{
+            marginBottom: "9vh",
+            background: "white",
+            width: "83vw",
+            borderRadius: "20px",
+            boxShadow: "1px 1px 2px 2px white",
+          }}
+          justify="center"
+        >
+          <Grid
+            style={{
+              height: "55vh",
+              paddingTop: "2vh",
+            }}
+          >
+            <Table
+              rows={filteredProducts}
+              columns={column}
+              width="80vw"
+              rowsPerPage="8"
+            />
+          </Grid>
+        </Grid.Container>
+      </Grid>
+    </Grid.Container>
+  );
+};
+
+export default Products;
+
+/*
+<div
       style={{
         height: "100vh",
         width: "85vw",
@@ -197,7 +311,4 @@ const Products = () => {
         </Grid>
       </Grid.Container>
     </div>
-  );
-};
-
-export default Products;
+*/

@@ -19,8 +19,8 @@ const Settings = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
 
   return (
-    <Grid.Container style={{ height: "100vh", width: "85vw", }}>
-      <Grid xs={6}>
+    <Grid.Container style={{ height: "100vh", width: "88vw" }}>
+      <Grid xs={6} justify="center">
         <Grid.Container style={{ display: "flex", justifyContent: "center" }}>
           <Grid xs={12}>
             <UserPicture text="Giulio Chiozzi" />

@@ -74,7 +74,111 @@ const Accounts = () => {
 
   const filteredAccounts = filterAccounts(accountQuery.data, searchQuery);
   return (
-    <div
+    <Grid.Container
+      style={{
+        marginTop: "4.5vh",
+        height: "95vh",
+        width: "87vw",
+        display: "flex",
+      }}
+      justify="center"
+    >
+      <Grid.Container
+        style={{
+          background: "white",
+          padding: "2vh",
+          height: "15vh",
+          borderRadius: "20px",
+          boxShadow: "1px 1px 2px 2px white",
+          marginLeft: "2vw",
+          marginRight: "2vw",
+          alignItems: "center",
+          marginTop: "10vh",
+        }}
+        gap={3}
+      >
+        <Grid xs={5}>
+          <h1
+            style={{
+              marginLeft: "3.5vw",
+            }}
+          >
+            Customers
+          </h1>
+        </Grid>
+        <Grid
+          xs={3}
+          style={{
+            paddingLeft: "9vw",
+          }}
+        >
+          <SearchBar
+            width="250px"
+            searchQuery={searchQuery}
+            setSearchQuery={setSearchQuery}
+          />
+        </Grid>
+        <Grid
+          xs={2}
+          style={{
+            paddingLeft: "4.5vw",
+          }}
+        >
+          <YellowButton
+            text="Add Account"
+            height="55px"
+            width="160px"
+            textSize="18px"
+          />
+        </Grid>
+        <Grid
+          xs={2}
+          style={{
+            paddingRight: "4.5vw",
+          }}
+        >
+          <YellowButton
+            text="Delete Account"
+            height="55px"
+            width="160px"
+            textSize="18px"
+          />
+        </Grid>
+      </Grid.Container>
+      <Grid>
+        <Grid.Container
+          style={{
+            marginBottom: "9vh",
+            background: "white",
+            width: "83vw",
+            borderRadius: "20px",
+            boxShadow: "1px 1px 2px 2px white",
+          }}
+          justify="center"
+        >
+          <Grid
+            style={{
+              height: "55vh",
+              paddingTop: "2vh",
+            }}
+          >
+            <Table
+              rows={filteredAccounts}
+              columns={column}
+              width="80vw"
+              rowsPerPage="8"
+            />
+          </Grid>
+        </Grid.Container>
+      </Grid>
+    </Grid.Container>
+  );
+};
+
+export default Accounts;
+
+/*
+<div
       style={{
         height: "100vh",
         width: "85vw",
@@ -169,7 +273,4 @@ const Accounts = () => {
         </Grid>
       </Grid.Container>
     </div>
-  );
-};
-
-export default Accounts;
+*/
