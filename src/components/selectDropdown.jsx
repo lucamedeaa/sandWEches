@@ -7,6 +7,7 @@ export default function CategoryDropdown({
   elements,
   setSelected,
   selected,
+  selectionMode,
 }) {
   const selectedValue = useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
@@ -36,7 +37,7 @@ export default function CategoryDropdown({
         aria-label="Single selection actions"
         color="white"
         disallowEmptySelection
-        selectionMode="single"
+        selectionMode={selectionMode}
         selectedKeys={selected}
         onSelectionChange={setSelected}
       >

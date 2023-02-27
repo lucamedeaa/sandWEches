@@ -1,7 +1,7 @@
 import { Table, NextUIProvider, Container } from "@nextui-org/react";
 import "../App.css";
 
-const Tab = ({ rows, columns, width, rowsPerPage }) => {
+const Tab = ({ rows, columns, width, rowsPerPage, setSelectedIndex }) => {
   return (
     <NextUIProvider>
       <Container css={{ width: width }}>
@@ -12,6 +12,7 @@ const Tab = ({ rows, columns, width, rowsPerPage }) => {
           selectionMode="single"
           style={{ background: "white" }}
           shadow={false}
+          onSelectionChange={(e) => setSelectedIndex(e.currentKey)}
         >
           <Table.Header columns={columns}>
             {(column) => (

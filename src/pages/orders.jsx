@@ -3,7 +3,7 @@ import YellowButton from "../components/yellow_button";
 import Table from "../components/table";
 import { Grid } from "@nextui-org/react";
 import { useQuery } from "react-query";
-import { getOrders } from "../data/api";
+import { getOrders, setDoneOrder } from "../data/api";
 import SearchBar from "../components/searchbar";
 import ReactLoading from "react-loading";
 
@@ -18,6 +18,7 @@ const filterOrders = (orders, searchQuery) => {
 
 const Orders = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedIndex, setSelectedIndex] = useState();
 
   const ordersQuery = useQuery({
     queryKey: ["orders"],
@@ -120,6 +121,7 @@ const Orders = () => {
             height="55px"
             width="160px"
             textSize="18px"
+            onPress={() => setDoneOrder(selectedIndex)}
           />
         </Grid>
       </Grid.Container>
@@ -145,6 +147,7 @@ const Orders = () => {
               columns={column}
               width="80vw"
               rowsPerPage="8"
+              setSelectedIndex={setSelectedIndex}
             />
           </Grid>
         </Grid.Container>

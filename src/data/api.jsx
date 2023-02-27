@@ -83,3 +83,20 @@ export function addProduct(
     )
     .then((res) => res.data);
 }
+
+export function setDoneOrder(id) {
+  return axios
+    .post(
+      "http://paninaraviolaitis.altervista.org/evomatic/API/order/setStatusOrder.php",
+      {
+        id,
+        status: 2,
+      },
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    )
+    .then((res) => res.data);
+}

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Text, Row, Spacer } from "@nextui-org/react";
 import OrangeButton from "./../orange_button";
 import TextField from "./../textfield";
 import DisabledTextField from "./../disabledTextField";
 import SelectNumber from "./../selectNumber";
-import SelectCategory from "./../selectCategory";
+import SelectCategory from "./../selectDropdown";
 import DisabledSelectActive from "./../disabledDropdown";
 
 export default function ModifyProduct({
@@ -16,7 +16,6 @@ export default function ModifyProduct({
   description,
   price,
   quantity,
-  category,
   boolActive,
   kcal,
   fats,
@@ -27,6 +26,9 @@ export default function ModifyProduct({
   fibers,
   salt,
 }) {
+  const [selectedCategory, setSelectedCategory] = useState(
+    new Set(["Category"])
+  );
   return (
     <Modal
       style={{ height }}
@@ -61,7 +63,35 @@ export default function ModifyProduct({
         </Row>
         <Spacer y="0.3" />
         <Row justify="center" xs={12} alignItems="baseline">
-          <SelectCategory width="330px" height="40px" category={category} />
+          <SelectCategory
+            width="330px"
+            height="40px"
+            elements={[
+              {
+                key: "1",
+                name: "Panino",
+              },
+              {
+                key: "2",
+                name: "Piadina",
+              },
+              {
+                key: "3",
+                name: "Snack",
+              },
+              {
+                key: "4",
+                name: "Dolce",
+              },
+              {
+                key: "5",
+                name: "Bibita",
+              },
+            ]}
+            selected={selectedCategory}
+            setSelected={setSelectedCategory}
+            selectionMode="single"
+          />
           <Spacer x="6" />
           <DisabledSelectActive
             width="330px"

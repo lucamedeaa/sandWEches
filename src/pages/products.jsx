@@ -104,7 +104,7 @@ const Products = () => {
         <Grid
           xs={3}
           style={{
-            paddingLeft: "4.5vw",
+            paddingLeft: "9vw",
           }}
         >
           <SearchBar
@@ -113,7 +113,12 @@ const Products = () => {
             setSearchQuery={setSearchQuery}
           />
         </Grid>
-        <Grid xs={1}>
+        <Grid
+          xs={2}
+          style={{
+            paddingLeft: "4.5vw",
+          }}
+        >
           <YellowButton
             text="Modify"
             height="55px"
@@ -127,7 +132,12 @@ const Products = () => {
             close={() => setShowModify(false)}
           />
         </Grid>
-        <Grid xs={1}>
+        <Grid
+          xs={2}
+          style={{
+            paddingRight: "4.5vw",
+          }}
+        >
           <YellowButton
             text="Add"
             height="55px"
@@ -139,19 +149,6 @@ const Products = () => {
             width="1000px"
             show={showAddProduct}
             close={() => setShowAddProduct(false)}
-          />
-        </Grid>
-        <Grid
-          xs={2}
-          style={{
-            paddingRight: "4.5vw",
-          }}
-        >
-          <YellowButton
-            text="Change Status"
-            height="55px"
-            width="160px"
-            textSize="18px"
           />
         </Grid>
       </Grid.Container>

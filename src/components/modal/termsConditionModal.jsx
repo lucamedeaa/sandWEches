@@ -12,6 +12,7 @@ const App = ({ width, height, show, close }) => {
         width={width}
         style={{
           height: height,
+          left: "-16vw"
         }}
       >
         <Modal.Header

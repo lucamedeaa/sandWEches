@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Grid } from "@nextui-org/react";
-import UserPicture from "./../components/profilePicture";
 import IconButton from "./../components/iconButton";
 import DisableTextField from "./../components/disabledTextField";
 import DeleteAccount from "./../components/modal/deleteAccountModal";
@@ -20,24 +19,51 @@ const Settings = () => {
 
   return (
     <Grid.Container style={{ height: "100vh", width: "88vw" }}>
-      <Grid xs={6} justify="center">
-        <Grid.Container style={{ display: "flex", justifyContent: "center" }}>
-          <Grid xs={12}>
-            <UserPicture text="Giulio Chiozzi" />
-          </Grid>
-          <Grid xs={12}>
-            <DisableTextField
-              placeholder="chiozzi.giulio@iisviolamarchesini.edu.it"
-              width="25vw"
-              height="6.5vh"
+      <Grid xs={6}>
+        <Grid.Container>
+          <Grid
+            xs={12}
+            justify="center"
+            style={{
+              marginTop: "12vh",
+            }}
+          >
+            <img
+              src="https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png"
+              height={150}
             />
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} justify="center">
+            <h1
+              style={{
+                color: "black",
+                fontSize: "2.5vh",
+                fontWeight: "lighter",
+                height: "0px",
+              }}
+            >
+              Giulio Chiozzi
+            </h1>
+          </Grid>
+          <Grid
+            xs={12}
+            justify="center"
+            style={{
+              marginBottom: "5vh",
+            }}
+          >
+            <DisableTextField
+              placeholder="chiozzi.giulio@iisviolamarchesini.edu.it"
+              height="4vh"
+              width="20vw"
+            />
+          </Grid>
+          <Grid xs={12} justify="center">
             <IconButton
               icon={TrashCan}
               text="Delete Account"
-              height="6.5vh"
-              width="25vw"
+              height="5.5vh"
+              width="20vw"
               iconSize={35}
               onPress={() => setShowDeleteAccount(true)}
             />
@@ -48,12 +74,12 @@ const Settings = () => {
               width="43vw"
             />
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} justify="center">
             <IconButton
               icon={Modify}
               text="Change Password"
-              height="6.5vh"
-              width="25vw"
+              height="5.5vh"
+              width="20vw"
               iconSize={35}
               onPress={() => setShowChange(true)}
             />
@@ -64,12 +90,12 @@ const Settings = () => {
               width="43vw"
             />
           </Grid>
-          <Grid xs={12}>
+          <Grid xs={12} justify="center">
             <IconButton
               icon={Book}
               text="Terms and Conditions"
-              height="6.5vh"
-              width="25vw"
+              height="5.5vh"
+              width="20vw"
               iconSize={35}
               onPress={() => setShowTerms(true)}
             />
@@ -80,12 +106,18 @@ const Settings = () => {
               width="43vw"
             />
           </Grid>
-          <Grid xs={12}>
+          <Grid
+            xs={12}
+            justify="center"
+            style={{
+              marginBottom: "12vh",
+            }}
+          >
             <IconButton
               icon={Eye}
               text="Privacy Policy"
-              height="6.5vh"
-              width="25vw"
+              height="5.5vh"
+              width="20vw"
               iconSize={35}
               onPress={() => setShowPrivacy(true)}
             />

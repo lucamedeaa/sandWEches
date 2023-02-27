@@ -3,7 +3,7 @@ import { Modal, Text, Row, Spacer } from "@nextui-org/react";
 import OrangeButton from "../orange_button";
 import TextField from "../textfield";
 import SelectNumber from "../selectNumber";
-import Select from "../selectCategory";
+import Select from "../selectDropdown";
 import { addProduct } from "../../data/api";
 
 export default function AddNewProduct({ width, height, show, close }) {
@@ -11,9 +11,9 @@ export default function AddNewProduct({ width, height, show, close }) {
   const [description, setDescription] = useState();
   const [price, setPrice] = useState();
   const [quantity, setQuantity] = useState();
-  const [category, setCategory] = useState(new Set(["Category"]));
-  const [ingredients, setIngredients] = useState(new Set(["Ingredients"]));
-  const [tags, setTags] = useState(new Set(["Tags"]));
+  const [category, setCategory] = useState(new Set(["1"]));
+  const [ingredients, setIngredients] = useState(new Set(["1"]));
+  const [tags, setTags] = useState(new Set(["1"]));
   const [kcal, setKcal] = useState();
   const [fats, setFats] = useState();
   const [saturatedFats, setSaturatedFats] = useState();
@@ -69,6 +69,7 @@ export default function AddNewProduct({ width, height, show, close }) {
         </Row>
         <Spacer y="0.3" />
         <Row justify="center" xs={12}>
+          <h5>Category</h5>
           <Select
             width="330px"
             height="40px"
@@ -96,8 +97,10 @@ export default function AddNewProduct({ width, height, show, close }) {
             ]}
             setSelected={setCategory}
             selected={category}
+            selectionMode="single"
           />
-          <Spacer x="6" />
+          <Spacer x="3" />
+          <h5>Ingredients</h5>
           <Select
             width="330px"
             height="40px"
@@ -125,26 +128,30 @@ export default function AddNewProduct({ width, height, show, close }) {
             ]}
             setSelected={setIngredients}
             selected={ingredients}
+            selectionMode="multiple"
           />
+          <Spacer x="3" />
+          <h5>Tags</h5>
           <Select
             width="330px"
             height="40px"
             elements={[
               {
                 key: "1",
-                name: "Panino",
+                name: "Vegano",
               },
               {
                 key: "2",
-                name: "Bevanda",
+                name: "Gluten Free",
               },
               {
                 key: "3",
-                name: "Piadina",
+                name: "Senza Lattosio",
               },
             ]}
             setSelected={setTags}
             selected={tags}
+            selectionMode="multiple"
           />
         </Row>
 
