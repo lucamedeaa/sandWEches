@@ -247,8 +247,8 @@ export default function AddNewProduct({ width, height, show, close }) {
                 description,
                 quantity,
                 category["currentKey"],
-                [1, 2, 3],
-                [1, 2],
+                ingredients,
+                tags,
                 nutritial_values
               );
             }}
