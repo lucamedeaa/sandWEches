@@ -34,20 +34,23 @@ const NavBar = () => {
       </Grid>
       {NavBarItems.map((item, index) => {
         return (
-          <Grid
-            key={index}
-            xs={12}
-            justify="center"
-            style={item.text === "Settings" ? { marginBottom: "25vh" } : {}}
-          >
+          <Grid key={index} xs={12} justify="center">
             <Link to={item.path}>
               <Button
                 className="Button"
                 icon={item.icon}
-                style={{
-                  height: "5vh",
-                  background: "#e85d22",
-                }}
+                style={
+                  item.text === "Settings"
+                    ? {
+                        marginBottom: "25vh",
+                        height: "5vh",
+                        background: "#e85d22",
+                      }
+                    : {
+                        height: "5vh",
+                        background: "#e85d22",
+                      }
+                }
                 id={window.location.pathname == item.path ? "active" : ""}
               >
                 {item.text}

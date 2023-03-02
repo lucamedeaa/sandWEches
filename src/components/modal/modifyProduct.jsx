@@ -41,7 +41,7 @@ export default function ModifyProduct({
       />
     );
 
-  if (product.status === "error") return JSON.stringify(product.error);
+  if (product.status === "error") return;
 
   return (
     <Modal

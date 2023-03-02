@@ -20,7 +20,6 @@ const filterOffers = (offers, searchQuery) => {
 
 const Offers = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [dateState, setDateState] = useState(new Date());
   const [showModify, setShowModify] = useState(false);
   const [showAdd, setShowAdd] = useState(false);
 
@@ -30,10 +29,6 @@ const Offers = () => {
     staleTime: 3000,
     refetchInterval: 1000,
   });
-
-  useEffect(() => {
-    setInterval(() => setDateState(new Date()), 30000);
-  }, []);
 
   if (offersQuery.status === "loading")
     return (
