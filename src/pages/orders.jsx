@@ -101,7 +101,7 @@ const Orders = () => {
         <Grid
           xs={4}
           style={{
-            paddingLeft: "10vw",
+            paddingLeft: "5vw",
           }}
         >
           <SearchBar
@@ -146,7 +146,7 @@ const Orders = () => {
               rows={filteredOrders}
               columns={column}
               width="80vw"
-              rowsPerPage="8"
+              rowsPerPage="7"
               setSelectedIndex={setSelectedIndex}
             />
           </Grid>

@@ -97,6 +97,12 @@ const App = ({ width, height, show, close }) => {
               }
 
               deleteAccount(localStorage.getItem("id"));
+              localStorage.removeItem("token");
+              localStorage.removeItem("email");
+              localStorage.removeItem("name");
+              localStorage.removeItem("surname");
+              localStorage.removeItem("id");
+              window.location.reload();
               close();
             }}
           />

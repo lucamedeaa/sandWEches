@@ -104,7 +104,7 @@ const Offers = () => {
         <Grid
           xs={3}
           style={{
-            paddingLeft: "9vw",
+            paddingLeft: "5vw",
           }}
         >
           <SearchBar
@@ -124,7 +124,9 @@ const Offers = () => {
             height="55px"
             width="160px"
             textSize="18px"
+            onPress={() => setShowModify(true)}
           />
+          <ModifyOffer width="1000px" show={showModify} close={()=>setShowModify(false)}/>
         </Grid>
         <Grid
           xs={2}
@@ -137,7 +139,9 @@ const Offers = () => {
             height="55px"
             width="160px"
             textSize="18px"
+            onPress={()=> setShowAdd(true)}
           />
+          <AddOffer width="1000px" show={showAdd} close={()=>setShowAdd(false)}/>
         </Grid>
       </Grid.Container>
       <Grid>
@@ -161,7 +165,7 @@ const Offers = () => {
               rows={filteredOffers}
               columns={column}
               width="80vw"
-              rowsPerPage="8"
+              rowsPerPage="7"
             />
           </Grid>
         </Grid.Container>

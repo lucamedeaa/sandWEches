@@ -10,6 +10,7 @@ import TrashCan from "/trashcan.svg";
 import Modify from "/modify.svg";
 import Eye from "/eye.svg";
 import Book from "/book.svg";
+import ExitToApp from "/exitToApp.svg";
 
 const Settings = () => {
   const [showDeleteAccount, setShowDeleteAccount] = useState(false);
@@ -64,8 +65,8 @@ const Settings = () => {
               icon={TrashCan}
               text="Delete Account"
               height="5.5vh"
-              width="20vw"
-              iconSize={35}
+              width="22vw"
+              iconSize={30}
               onPress={() => setShowDeleteAccount(true)}
             />
             <DeleteAccount
@@ -80,8 +81,8 @@ const Settings = () => {
               icon={Modify}
               text="Change Password"
               height="5.5vh"
-              width="20vw"
-              iconSize={35}
+              width="22vw"
+              iconSize={30}
               onPress={() => setShowChange(true)}
             />
             <ChangePassword
@@ -94,10 +95,10 @@ const Settings = () => {
           <Grid xs={12} justify="center">
             <IconButton
               icon={Book}
-              text="Terms and Conditions"
+              text="Terms/Conditions"
               height="5.5vh"
-              width="20vw"
-              iconSize={35}
+              width="22vw"
+              iconSize={30}
               onPress={() => setShowTerms(true)}
             />
             <TermsAndConditions
@@ -110,16 +111,13 @@ const Settings = () => {
           <Grid
             xs={12}
             justify="center"
-            style={{
-              marginBottom: "12vh",
-            }}
           >
             <IconButton
               icon={Eye}
               text="Privacy Policy"
               height="5.5vh"
-              width="20vw"
-              iconSize={35}
+              width="22vw"
+              iconSize={30}
               onPress={() => setShowPrivacy(true)}
             />
             <PrivacyPolicy
@@ -129,6 +127,29 @@ const Settings = () => {
               width="43vw"
             />
           </Grid>
+          <Grid
+            xs={12}
+            justify="center"
+            style={{
+              marginBottom:"12vh"
+            }}
+          >
+            <IconButton
+              icon={ExitToApp}
+              text="Logout"
+              height="5.5vh"
+              width="22vw"
+              iconSize={25}
+              onPress={()=>{ 
+              localStorage.removeItem("token");
+              localStorage.removeItem("email");
+              localStorage.removeItem("name");
+              localStorage.removeItem("surname");
+              localStorage.removeItem("id");
+              window.location.reload();}}
+            />
+          </Grid>
+
         </Grid.Container>
       </Grid>
       <Grid

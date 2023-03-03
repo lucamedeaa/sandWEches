@@ -3,6 +3,7 @@ import { Modal, Text } from "@nextui-org/react";
 import TextField from "../textfield";
 import OrangeButton from "../orange_button";
 import { changePassword } from "../../data/api";
+import { Close } from "@mui/icons-material";
 
 const App = ({ width, height, show, close }) => {
   const [email, setEmail] = useState();
@@ -91,7 +92,7 @@ const App = ({ width, height, show, close }) => {
             width="200px"
             height="64px"
             textSize={18}
-            onPress={() => changePassword(email, pass, newPass)}
+            onPress={() => {changePassword(email, pass, newPass); close()}}
           />
         </Modal.Footer>
       </Modal>

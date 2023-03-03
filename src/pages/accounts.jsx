@@ -107,7 +107,7 @@ const Accounts = () => {
         <Grid
           xs={3}
           style={{
-            paddingLeft: "9vw",
+            paddingLeft: "5vw",
           }}
         >
           <SearchBar
@@ -123,7 +123,7 @@ const Accounts = () => {
           }}
         >
           <YellowButton
-            text="Add Account"
+            text="Add"
             height="55px"
             width="160px"
             textSize="18px"
@@ -143,7 +143,7 @@ const Accounts = () => {
           }}
         >
           <YellowButton
-            text="Delete Account"
+            text="Delete"
             height="55px"
             width="160px"
             textSize="18px"
@@ -172,7 +172,7 @@ const Accounts = () => {
               rows={filteredAccounts}
               columns={column}
               width="80vw"
-              rowsPerPage="8"
+              rowsPerPage="7"
               setSelectedIndex={setSelectedIndex}
             />
           </Grid>

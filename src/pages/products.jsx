@@ -105,7 +105,7 @@ const Products = () => {
         <Grid
           xs={3}
           style={{
-            paddingLeft: "9vw",
+            paddingLeft: "5vw",
           }}
         >
           <SearchBar
@@ -175,7 +175,7 @@ const Products = () => {
               rows={filteredProducts}
               columns={column}
               width="80vw"
-              rowsPerPage="8"
+              rowsPerPage="7"
               setSelectedIndex={setSelectedIndex}
             />
           </Grid>
