@@ -85,10 +85,10 @@ export default function ModifyProduct({
         </Row>
         <Spacer y="0.3" />
         <Row justify="center" xs={12} alignItems="baseline">
-          <h5>Category</h5>
           <SelectCategory
             width="330px"
             height="40px"
+            text="Category: "
             elements={[
               {
                 key: "1",
@@ -117,10 +117,10 @@ export default function ModifyProduct({
             selectionMode="single"
           />
           <Spacer x="6" />
-          <h5>Active</h5>
           <DisabledSelectActive
             width="330px"
             height="40px"
+            text="Active: "
             boolActive={product.data["active"]}
           />
         </Row>
@@ -201,6 +201,7 @@ export default function ModifyProduct({
             width="120px"
             text="Submit"
             textsize="20"
+            onPress={()=>close()}
           />
         </div>
       </Modal.Footer>

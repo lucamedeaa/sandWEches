@@ -69,10 +69,10 @@ export default function AddNewProduct({ width, height, show, close }) {
         </Row>
         <Spacer y="0.3" />
         <Row justify="center" xs={12}>
-          <h5>Category</h5>
           <Select
             width="330px"
             height="40px"
+            text="Category: "
             elements={[
               {
                 key: "1",
@@ -100,10 +100,10 @@ export default function AddNewProduct({ width, height, show, close }) {
             selectionMode="single"
           />
           <Spacer x="3" />
-          <h5>Ingredients</h5>
           <Select
             width="330px"
             height="40px"
+            text="Ingredients: "
             elements={[
               {
                 key: "3",
@@ -131,10 +131,10 @@ export default function AddNewProduct({ width, height, show, close }) {
             selectionMode="multiple"
           />
           <Spacer x="3" />
-          <h5>Tags</h5>
           <Select
             width="330px"
             height="40px"
+            text="Tags: "
             elements={[
               {
                 key: "1",
@@ -251,6 +251,7 @@ export default function AddNewProduct({ width, height, show, close }) {
                 tags,
                 nutritial_values
               );
+              close();
             }}
           />
         </div>

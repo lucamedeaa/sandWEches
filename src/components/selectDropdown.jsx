@@ -8,7 +8,8 @@ export default function CategoryDropdown({
   setSelected,
   selected,
   selectionMode,
-  defaultValue
+  defaultValue,
+  text
 }) {
   const selectedValue = useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
@@ -32,6 +33,7 @@ export default function CategoryDropdown({
         bordered
         borderWeight="light"
       >
+        {text}
         {selectedValue}
       </Dropdown.Button>
       <Dropdown.Menu

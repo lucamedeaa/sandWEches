@@ -14,6 +14,7 @@ export default function ActiveDropdown({width, height,boolActive}) {
       <Dropdown.Button flat color="orange" 
       css={{ tt: "capitalize", width:width, height:height, background:"white", borderColor:"Orange", borderRadius:"3px", fontWeight:"bold"}}
        bordered borderWeight="light">
+        Active: 
         {selectedValue}
       </Dropdown.Button>
       <Dropdown.Menu

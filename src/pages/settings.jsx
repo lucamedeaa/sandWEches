@@ -58,7 +58,7 @@ const Settings = () => {
               marginBottom: "5vh",
             }}
           >
-            <DisableTextField placeholder={email} height="4vh" width="20vw" />
+            <DisableTextField placeholder={email} height="4.5vh" width="20vw" />
           </Grid>
           <Grid xs={12} justify="center">
             <IconButton

@@ -1,8 +1,8 @@
 import React from "react";
 import { Dropdown } from "@nextui-org/react";
 
-export default function DisabledActiveDropdown({width, height,boolActive,text}) {
-  const [selected, setSelected] = React.useState(new Set([boolActive]));
+export default function DisabledSelectStatus({width, height,boolStatus}) {
+  const [selected, setSelected] = React.useState(new Set([boolStatus]));
 
   const selectedValue = React.useMemo(
     () => Array.from(selected).join(", ").replaceAll("_", " "),
@@ -14,11 +14,11 @@ export default function DisabledActiveDropdown({width, height,boolActive,text}) 
       <Dropdown.Button flat color="#EBEDF0" 
       css={{ tt: "capitalize", width:width, height:height, background:"#EBEDF0", borderColor:"#EBEDF0", borderRadius:"3px", fontWeight:"bold"}}
        bordered borderWeight="light">
-        {text}
+        Status: 
         {selectedValue}
       </Dropdown.Button>
       <Dropdown.Menu
-      disabledKeys={["Active", "Non Active"]}
+      disabledKeys={["Delivered", "Non Delivered"]}
         aria-label="Single selection actions"
         color="#EBEDF0"
         disallowEmptySelection
@@ -26,8 +26,8 @@ export default function DisabledActiveDropdown({width, height,boolActive,text}) 
         selectedKeys={selected}
         onSelectionChange={setSelected}
       >
-        <Dropdown.Item key="Active">Active</Dropdown.Item>
-        <Dropdown.Item key="Non Active">Non Active</Dropdown.Item>
+        <Dropdown.Item key="Delivered">Delivered</Dropdown.Item>
+        <Dropdown.Item key=" Non Delivered">Non Delivered</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown>
   );

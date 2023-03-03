@@ -6,6 +6,7 @@ import { useQuery } from "react-query";
 import { getOrders, setDoneOrder } from "../data/api";
 import SearchBar from "../components/searchbar";
 import ReactLoading from "react-loading";
+import ViewOrder from "../components/modal/viewOrder";
 
 const filterOrders = (orders, searchQuery) => {
   if (!searchQuery) return orders;
@@ -19,6 +20,7 @@ const filterOrders = (orders, searchQuery) => {
 const Orders = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedIndex, setSelectedIndex] = useState();
+  const [selectedOrder, setSelectedOrder] = useState(false);
 
   const ordersQuery = useQuery({
     queryKey: ["orders"],
@@ -89,7 +91,7 @@ const Orders = () => {
         }}
         gap={3}
       >
-        <Grid xs={6}>
+        <Grid xs={5}>
           <h1
             style={{
               marginLeft: "3.5vw",
@@ -99,10 +101,7 @@ const Orders = () => {
           </h1>
         </Grid>
         <Grid
-          xs={4}
-          style={{
-            paddingLeft: "5vw",
-          }}
+          xs={3}
         >
           <SearchBar
             width="275px"
@@ -110,12 +109,17 @@ const Orders = () => {
             setSearchQuery={setSearchQuery}
           />
         </Grid>
-        <Grid
-          xs={2}
-          style={{
-            paddingRight: "4.5vw",
-          }}
-        >
+        <Grid xs={2}>
+        <YellowButton
+            text="View"
+            height="55px"
+            width="160px"
+            textSize="18px"
+            onPress={()=>setSelectedOrder(true)}
+          />
+          <ViewOrder width="1000px" show={selectedOrder} close={()=>setSelectedOrder(false)}/>
+        </Grid>
+        <Grid xs={2} style={{paddingRight:"2.5vw"}}>
           <YellowButton
             text="Set to done"
             height="55px"

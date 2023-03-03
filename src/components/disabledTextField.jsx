@@ -9,9 +9,11 @@ export default function DisabledTextField({
   return (
     <Input
       disabled
-      style={{ width, background: "#EBEDF0", height, color: "black", paddingLeft: "15px"}}
+      style={{ width, background: "#EBEDF0", borderColor:"#EBEDF0", height, color: "black", paddingLeft: "15px"}}
       label={label}
       placeholder={placeholder}
+      bordered
+      borderWeight="1px"
     />
   );
 }
